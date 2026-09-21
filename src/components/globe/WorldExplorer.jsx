@@ -30,7 +30,21 @@ import {
   
     const [activeDestination, setActiveDestination] =
       useState(null);
+    const [globeActive, setGlobeActive] = useState(false);
   
+    useEffect(() => {
+      const node = section.current;
+      if (!node) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => setGlobeActive(entry.isIntersecting),
+        { rootMargin: "700px 0px", threshold: 0 }
+      );
+
+      observer.observe(node);
+      return () => observer.disconnect();
+    }, []);
+
     useEffect(() => {
       const ctx = gsap.context(() => {
         gsap.fromTo(
@@ -391,29 +405,28 @@ import {
               lg:h-[720px]
             "
           >
-            <Canvas
-              dpr={[1, 1.15]}
-              camera={{
-                position: [0, 0, 5.6],
-                fov: 42,
-              }}
-              gl={{
-                antialias: true,
-                alpha: true,
-              }}
-            >
-              <Suspense fallback={null}>
-                <Globe
-                  ref={globeRef}
-                  activeDestination={
-                    activeDestination
-                  }
-                  onSelectDestination={
-                    setActiveDestination
-                  }
-                />
-              </Suspense>
-            </Canvas>
+            {globeActive && (
+              <Canvas
+                dpr={1}
+                camera={{
+                  position: [0, 0, 5.6],
+                  fov: 42,
+                }}
+                gl={{
+                  antialias: true,
+                  alpha: true,
+                  powerPreference: "high-performance",
+                }}
+              >
+                <Suspense fallback={null}>
+                  <Globe
+                    ref={globeRef}
+                    activeDestination={activeDestination}
+                    onSelectDestination={setActiveDestination}
+                  />
+                </Suspense>
+              </Canvas>
+            )}
   
             {/* DRAG LABEL */}
   

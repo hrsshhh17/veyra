@@ -304,7 +304,7 @@ import {
     return (
       <>
         <mesh>
-          <sphereGeometry args={[2.075, 96, 96]} />
+          <sphereGeometry args={[2.075, 64, 64]} />
   
           <meshBasicMaterial
             color="#4db8e8"
@@ -316,7 +316,7 @@ import {
         </mesh>
   
         <mesh>
-          <sphereGeometry args={[2.14, 96, 96]} />
+          <sphereGeometry args={[2.14, 64, 64]} />
   
           <meshBasicMaterial
             color="#61c6f1"
@@ -362,7 +362,7 @@ import {
       earthTexture.wrapS = THREE.RepeatWrapping;
       earthTexture.wrapT = THREE.ClampToEdgeWrapping;
   
-      earthTexture.anisotropy = 8;
+      earthTexture.anisotropy = 4;
   
       /*
        * If the map appears horizontally reversed on your
@@ -492,7 +492,7 @@ import {
           {/* REAL EARTH */}
   
           <mesh>
-            <sphereGeometry args={[2, 128, 128]} />
+            <sphereGeometry args={[2, 72, 72]} />
   
             <meshStandardMaterial
               map={earthTexture}
@@ -505,7 +505,7 @@ import {
           {/* VERY SUBTLE OCEAN / SURFACE SHEEN */}
   
           <mesh>
-            <sphereGeometry args={[2.004, 96, 96]} />
+            <sphereGeometry args={[2.004, 64, 64]} />
   
             <meshPhongMaterial
               color="#4da7d2"

@@ -40,3 +40,12 @@ img { image-rendering: auto; }
 @media (max-width: 767px) {
   body { overscroll-behavior-y: none; }
 }
+
+
+/* Skip expensive off-screen rendering while preserving document flow. */
+@supports (content-visibility: auto) {
+  main > section:not(:first-child) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
+}

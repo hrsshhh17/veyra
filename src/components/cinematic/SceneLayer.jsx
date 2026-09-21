@@ -29,7 +29,6 @@ const SceneLayer = forwardRef(function SceneLayer(
           h-full w-full
           object-cover object-center
           select-none
-          will-change-transform
           ${className}
         `}
       />
