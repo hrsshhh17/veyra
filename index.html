@@ -12,7 +12,7 @@
     />
 
     <!-- =====================================================
-         BASIC SEO
+         PRIMARY SEO
     ====================================================== -->
     <title>VEYRA — Travel Beyond the Familiar</title>
 
@@ -29,6 +29,14 @@
     <meta name="author" content="Harsh Shukla" />
 
     <!-- =====================================================
+         CANONICAL URL
+    ====================================================== -->
+    <link
+      rel="canonical"
+      href="https://veyra-chi-one.vercel.app/"
+    />
+
+    <!-- =====================================================
          FAVICON
     ====================================================== -->
     <link
@@ -40,14 +48,24 @@
     <!-- =====================================================
          BROWSER / THEME
     ====================================================== -->
-    <meta name="theme-color" content="#080808" />
-    <meta name="color-scheme" content="dark" />
+    <meta
+      name="theme-color"
+      content="#080808"
+    />
+
+    <meta
+      name="color-scheme"
+      content="dark"
+    />
 
     <!-- =====================================================
          OPEN GRAPH
          WhatsApp / LinkedIn / Facebook / Discord / etc.
     ====================================================== -->
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:type"
+      content="website"
+    />
 
     <meta
       property="og:site_name"
@@ -65,8 +83,18 @@
     />
 
     <meta
+      property="og:url"
+      content="https://veyra-chi-one.vercel.app/"
+    />
+
+    <meta
       property="og:image"
-      content="/images/og-image.jpg"
+      content="https://veyra-chi-one.vercel.app/images/og-image.jpg"
+    />
+
+    <meta
+      property="og:image:secure_url"
+      content="https://veyra-chi-one.vercel.app/images/og-image.jpg"
     />
 
     <meta
@@ -90,7 +118,7 @@
     />
 
     <!-- =====================================================
-         X / TWITTER PREVIEW
+         X / TWITTER
     ====================================================== -->
     <meta
       name="twitter:card"
@@ -109,7 +137,7 @@
 
     <meta
       name="twitter:image"
-      content="/images/og-image.jpg"
+      content="https://veyra-chi-one.vercel.app/images/og-image.jpg"
     />
 
     <meta
@@ -141,10 +169,16 @@
   </head>
 
   <body>
+    <!-- =====================================================
+         JAVASCRIPT FALLBACK
+    ====================================================== -->
     <noscript>
       VEYRA requires JavaScript to run this travel experience.
     </noscript>
 
+    <!-- =====================================================
+         REACT ROOT
+    ====================================================== -->
     <div id="root"></div>
   </body>
 </html>
